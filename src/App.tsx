@@ -1,7 +1,9 @@
-export function App() {
+import { Home } from './routes/Home';
+
+export const App = () => {
   return (
     <>
-      <h1>Router APP</h1>
+      <Home />
     </>
   );
-}
+};
