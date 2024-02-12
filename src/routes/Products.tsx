@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import productsJson from '../data/products.json';
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export type Product = {
   id: string;
@@ -8,9 +8,21 @@ export type Product = {
   price: number;
 };
 
-const products: Product[] = productsJson;
+// const products: Product[] = productsJson;
 
 export const Products = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const callFakeApi = async () => {
+      const request = await fetch("http://localhost:5173/products.json");
+      const data = await request.json();
+      setProducts(data);
+    };
+
+    callFakeApi();
+  }, []);
+
   return (
     <div>
       <h2>Products</h2>
