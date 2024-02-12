@@ -9,6 +9,12 @@ const styles: CSSProperties = {
 
 const fakeUser = "Jonathan";
 
-export const Header = () => {
-  return <header style={styles}>Header {fakeUser}</header>;
+type THeaderProps = {
+  userIsLogged?: boolean;
+};
+
+export const Header = ({ userIsLogged = false }: THeaderProps) => {
+  return (
+    <header style={styles}>Header {userIsLogged ? fakeUser : null}</header>
+  );
 };
