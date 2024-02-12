@@ -1,18 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AboutPage } from "../pages/about-page";
-import { ProductsPage } from "../pages/products";
-import { ContactsPage } from "../pages/contacts-page";
-import { HomePage } from "../pages/home-page";
-import { HeaderLayout } from "../layouts/header-layout";
+import { FooterLayout } from "../layouts/footer-layout";
+import { PRIVATE_ROUTES } from "./private/private-routes";
+import { PUBLIC_ROUTES } from "./public/public-routes";
 
 export const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
   {
-    element: <HeaderLayout />,
-    children: [
-      { path: "about", element: <AboutPage /> },
-      { path: "products", element: <ProductsPage /> },
-      { path: "contacts", element: <ContactsPage /> },
-    ],
+    element: <FooterLayout />,
+    children: [...PUBLIC_ROUTES, ...PRIVATE_ROUTES],
   },
 ]);
