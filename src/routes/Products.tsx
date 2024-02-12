@@ -13,7 +13,8 @@ const products: Product[] = productsJson;
 export const Products = () => {
   return (
     <div>
-      <h1>Products</h1>
+      <h2>Products</h2>
+      <p>This is the about page.</p>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
