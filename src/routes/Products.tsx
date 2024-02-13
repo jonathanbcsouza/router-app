@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useData } from '../hooks/useData';
-
+import { Spinner } from './Spinner';
 
 export const Products = () => {
   const products = useData('/data/products.json');
 
+  if (!products) {
+    return <Spinner />;
+  }
 
   return (
     <div>
