@@ -1,14 +1,15 @@
+import { useLoaderData } from "react-router-dom";
 import { Product } from "./components/product";
-import { useProductsHook } from "./hooks/products-hook";
+import { TProductsLoaderData } from "./loaders/get-products-loader";
 
 export const Products = () => {
-  const products = useProductsHook();
+  const { products } = useLoaderData() as TProductsLoaderData;
 
   return (
     <div>
       <ul>
         {products?.map((product) => (
-          <Product {...product} />
+          <Product key={product.id} {...product} />
         ))}
       </ul>
     </div>
