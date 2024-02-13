@@ -1,3 +1,16 @@
+import { Product } from "./components/product";
+import { useProductsHook } from "./hooks/products-hook";
+
 export const Products = () => {
-  return <h1>Products page</h1>;
+  const products = useProductsHook();
+
+  return (
+    <div>
+      <ul>
+        {products?.map((product) => (
+          <Product {...product} />
+        ))}
+      </ul>
+    </div>
+  );
 };
