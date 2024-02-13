@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
 import { NavLink } from "react-router-dom";
 import { EPrivateRouteNames } from "../../../routes/private/definitions";
+import { translations } from "../../../locale";
 
 const styles: CSSProperties = {
   backgroundColor: "grey",
@@ -18,7 +19,8 @@ type THeaderProps = {
 export const Header = ({ userIsLogged = false }: THeaderProps) => {
   return (
     <header style={styles}>
-      Header {userIsLogged ? fakeUser : null}
+      {translations.sharedComponents.header.title}
+      {userIsLogged ? fakeUser : null}
       <nav>
         <ul>
           <li>
@@ -28,7 +30,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
                 isPending ? "pending" : isActive ? "active" : ""
               }
             >
-              About
+              {translations.pages.about.title}
             </NavLink>
           </li>
           <li>
@@ -38,7 +40,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
                 isPending ? "pending" : isActive ? "active" : ""
               }
             >
-              Products
+              {translations.pages.products.title}
             </NavLink>
           </li>
           <li>
@@ -48,7 +50,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
                 isPending ? "pending" : isActive ? "active" : ""
               }
             >
-              Contacts
+              {translations.pages.contacts.title}
             </NavLink>
           </li>
         </ul>

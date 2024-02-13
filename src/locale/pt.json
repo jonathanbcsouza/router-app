@@ -1,0 +1,36 @@
+{
+  "common": {
+    "welcome": "Bem-vindo"
+  },
+  "actions": {
+    "save": "Salvar",
+    "cancel": "Cancelar"
+  },
+  "states": {
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "loading": "Carregando"
+  },
+  "sharedComponents": {
+    "header": {
+      "title": "Cabeçalho"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Sobre"
+    },
+    "products": {
+      "title": "Produtos"
+    },
+    "contacts": {
+      "title": "Contatos"
+    },
+    "home": {
+      "title": "Página inicial"
+    },
+    "termsOfUsage": {
+      "title": "Termos de uso"
+    }
+  }
+}

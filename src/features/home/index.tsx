@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { translations } from "../../locale";
 
 const styles: CSSProperties = {
   backgroundColor: "red",
@@ -6,5 +7,5 @@ const styles: CSSProperties = {
 };
 
 export function Home() {
-  return <h1 style={styles}>Home page</h1>;
+  return <h1 style={styles}>{translations.pages.home.title}</h1>;
 }

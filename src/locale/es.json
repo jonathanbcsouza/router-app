@@ -1,0 +1,36 @@
+{
+  "common": {
+    "welcome": "Bienvenido"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "states": {
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "loading": "Cargando"
+  },
+  "sharedComponents": {
+    "header": {
+      "title": "Mi aplicación"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de"
+    },
+    "products": {
+      "title": "Productos"
+    },
+    "contacts": {
+      "title": "Contactos"
+    },
+    "home": {
+      "title": "Inicio"
+    },
+    "termsOfUsage": {
+      "title": "Términos de uso"
+    }
+  }
+}
