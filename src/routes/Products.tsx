@@ -1,16 +1,11 @@
 import { Link } from 'react-router-dom';
-import productsJson from '../data/products.json';
+import { useData } from '../hooks/useData';
 
-export type Product = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-};
-
-const products: Product[] = productsJson;
 
 export const Products = () => {
+  const products = useData('/data/products.json');
+
+
   return (
     <div>
       <h2>Products</h2>

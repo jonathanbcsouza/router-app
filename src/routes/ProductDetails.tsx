@@ -1,17 +1,14 @@
 import { useParams } from 'react-router-dom';
-import products from '../data/products.json';
-import { Product } from './Products';
+import { useData } from '../hooks/useData';
 
 type TParams = {
   id: string;
 };
 
-const data: Product[] = products;
-
 export const ProductDetails = () => {
   const { id } = useParams<TParams>();
-
-  const selectedProduct = data.find((p) => p.id === id);
+  const products = useData('/data/products.json');
+  const selectedProduct = products?.find((p) => p.id === id);
 
   return (
     <div>
