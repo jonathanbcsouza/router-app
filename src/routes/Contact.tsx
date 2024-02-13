@@ -9,8 +9,7 @@ export const Contact = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(form);
-    alert(`Data submitted: \n${JSON.stringify(form, null, 2)}`);
+    alert(`Data submitted: \n\nName: ${form.name}\nEmail: ${form.email}\nMessage: ${form.message}`);
     setForm({ name: '', email: '', message: '' });
   };
 
