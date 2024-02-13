@@ -1,10 +1,11 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
 import { EPublicRouteNames } from "../../../routes/public/definitions";
+import { myApiFetch } from "../../../services/my-api";
 
 export type TUserLoaderData = { user: unknown };
 
 export const getUserLoader = async ({ request }: LoaderFunctionArgs) => {
-  const response = await fetch("http://localhost:5173/user.json", {
+  const response = await myApiFetch("/user.json", {
     signal: request.signal,
   });
   const user = await response.json();

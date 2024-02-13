@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { TProduct } from "../types";
+import { myApiFetch } from "../../../services/my-api";
 
 export const useProductsHook = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/products.json")
+    myApiFetch("/products.json")
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
