@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { NavLink } from "react-router-dom";
+import { EPrivateRouteNames } from "../../../routes/private/definitions";
 
 const styles: CSSProperties = {
   backgroundColor: "grey",
@@ -22,7 +23,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
         <ul>
           <li>
             <NavLink
-              to="/about"
+              to={EPrivateRouteNames.ABOUT}
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               }
@@ -32,7 +33,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
           </li>
           <li>
             <NavLink
-              to="/products"
+              to={EPrivateRouteNames.PRODUCTS}
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               }
@@ -42,7 +43,7 @@ export const Header = ({ userIsLogged = false }: THeaderProps) => {
           </li>
           <li>
             <NavLink
-              to="/contacts"
+              to={EPrivateRouteNames.CONTACTS}
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               }

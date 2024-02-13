@@ -1,5 +1,5 @@
 import React from "react";
 
-export const ErrorBoundary: React.FC = () => {
-  return <div>Something went wrong</div>;
+export const ProductsErrorBoundary: React.FC = () => {
+  return <div>Something went wrong on Products Component</div>;
 };

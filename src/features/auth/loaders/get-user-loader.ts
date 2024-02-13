@@ -1,4 +1,5 @@
 import { LoaderFunctionArgs, redirect } from "react-router-dom";
+import { EPublicRouteNames } from "../../../routes/public/definitions";
 
 export type TUserLoaderData = { user: unknown };
 
@@ -8,7 +9,7 @@ export const getUserLoader = async ({ request }: LoaderFunctionArgs) => {
   });
   const user = await response.json();
 
-  if (!user) throw redirect("/login");
+  if (!user) throw redirect(EPublicRouteNames.HOME);
 
   return { user };
 };

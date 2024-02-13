@@ -5,8 +5,9 @@ import { ContactsPage } from "../../pages/contacts-page";
 import { ProductsPage } from "../../pages/products";
 import { AuthLayout } from "../../layouts/auth-layout";
 import { getProductsLoader } from "../../features/products/loaders/get-products-loader";
-import { ErrorBoundary } from "../../features/products/error-boundary";
+import { ProductsErrorBoundary } from "../../features/products/error-boundary";
 import { getUserLoader } from "../../features/auth/loaders/get-user-loader";
+import { EPrivateRouteNames } from "./definitions";
 
 export const PRIVATE_ROUTES: RouteObject[] = [
   {
@@ -16,15 +17,14 @@ export const PRIVATE_ROUTES: RouteObject[] = [
       {
         element: <HeaderLayout />,
         children: [
-          { path: "about", element: <AboutPage /> },
+          { path: EPrivateRouteNames.ABOUT, element: <AboutPage /> },
           {
-            path: "products",
+            path: EPrivateRouteNames.PRODUCTS,
             element: <ProductsPage />,
             loader: getProductsLoader,
-            errorElement: <ErrorBoundary />,
-            hydrateFallbackElement: <div>Loading...</div>,
+            errorElement: <ProductsErrorBoundary />,
           },
-          { path: "contacts", element: <ContactsPage /> },
+          { path: EPrivateRouteNames.CONTACTS, element: <ContactsPage /> },
         ],
       },
     ],
